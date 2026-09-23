@@ -1,0 +1,315 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA1100012C00000100000001 /* InvoiceTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1100012C00000100000001 /* InvoiceTrackerApp.swift */; };
+		AA1100022C00000100000001 /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1100022C00000100000001 /* Invoice.swift */; };
+		AA1100032C00000100000001 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1100032C00000100000001 /* User.swift */; };
+		AA1100042C00000100000001 /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1100042C00000100000001 /* BackendService.swift */; };
+		AA1100052C00000100000001 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1100052C00000100000001 /* SpeechRecognizer.swift */; };
+		AA1100062C00000100000001 /* PDFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1100062C00000100000001 /* PDFManager.swift */; };
+		AA1100072C00000100000001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1100072C00000100000001 /* ContentView.swift */; };
+		AA1100082C00000100000001 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1100082C00000100000001 /* DashboardView.swift */; };
+		AA1100092C00000100000001 /* NewBillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1100092C00000100000001 /* NewBillView.swift */; };
+		AA11000A2C00000100000001 /* DraftPreviewEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB11000A2C00000100000001 /* DraftPreviewEditView.swift */; };
+		AA11000B2C00000100000001 /* PDFViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB11000B2C00000100000001 /* PDFViewerView.swift */; };
+		AA11000C2C00000100000001 /* BackendConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB11000C2C00000100000001 /* BackendConfigView.swift */; };
+		AA11000D2C00000100000001 /* ManageUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB11000D2C00000100000001 /* ManageUsersView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CC1100012C00000100000001 /* InvoiceTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InvoiceTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB1100012C00000100000001 /* InvoiceTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceTrackerApp.swift; sourceTree = "<group>"; };
+		BB1100022C00000100000001 /* Invoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
+		BB1100032C00000100000001 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BB1100042C00000100000001 /* BackendService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendService.swift; sourceTree = "<group>"; };
+		BB1100052C00000100000001 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		BB1100062C00000100000001 /* PDFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFManager.swift; sourceTree = "<group>"; };
+		BB1100072C00000100000001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BB1100082C00000100000001 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		BB1100092C00000100000001 /* NewBillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBillView.swift; sourceTree = "<group>"; };
+		BB11000A2C00000100000001 /* DraftPreviewEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraftPreviewEditView.swift; sourceTree = "<group>"; };
+		BB11000B2C00000100000001 /* PDFViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewerView.swift; sourceTree = "<group>"; };
+		BB11000C2C00000100000001 /* BackendConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendConfigView.swift; sourceTree = "<group>"; };
+		BB11000D2C00000100000001 /* ManageUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageUsersView.swift; sourceTree = "<group>"; };
+		BB11000E2C00000100000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD1100012C00000100000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EE1100012C00000100000001 = {
+			isa = PBXGroup;
+			children = (
+				EE1100022C00000100000001 /* InvoiceTracker */,
+				EE1100032C00000100000001 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EE1100022C00000100000001 /* InvoiceTracker */ = {
+			isa = PBXGroup;
+			children = (
+				BB1100012C00000100000001 /* InvoiceTrackerApp.swift */,
+				EE1100042C00000100000001 /* Models */,
+				EE1100052C00000100000001 /* Services */,
+				EE1100062C00000100000001 /* Views */,
+				BB11000E2C00000100000001 /* Info.plist */,
+			);
+			path = InvoiceTracker;
+			sourceTree = "<group>";
+		};
+		EE1100032C00000100000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CC1100012C00000100000001 /* InvoiceTracker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE1100042C00000100000001 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB1100022C00000100000001 /* Invoice.swift */,
+				BB1100032C00000100000001 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EE1100052C00000100000001 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BB1100042C00000100000001 /* BackendService.swift */,
+				BB1100052C00000100000001 /* SpeechRecognizer.swift */,
+				BB1100062C00000100000001 /* PDFManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EE1100062C00000100000001 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB1100072C00000100000001 /* ContentView.swift */,
+				BB1100082C00000100000001 /* DashboardView.swift */,
+				BB1100092C00000100000001 /* NewBillView.swift */,
+				BB11000A2C00000100000001 /* DraftPreviewEditView.swift */,
+				BB11000B2C00000100000001 /* PDFViewerView.swift */,
+				BB11000C2C00000100000001 /* BackendConfigView.swift */,
+				BB11000D2C00000100000001 /* ManageUsersView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF1100012C00000100000001 /* InvoiceTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = GG1100012C00000100000001 /* Build configuration list for PBXNativeTarget "InvoiceTracker" */;
+			buildPhases = (
+				DD1100022C00000100000001 /* Sources */,
+				DD1100012C00000100000001 /* Frameworks */,
+				DD1100032C00000100000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InvoiceTracker;
+			productName = InvoiceTracker;
+			productReference = CC1100012C00000100000001 /* InvoiceTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		001100012C00000100000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					FF1100012C00000100000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = GG1100022C00000100000001 /* Build configuration list for PBXProject "InvoiceTracker" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EE1100012C00000100000001;
+			productRefGroup = EE1100032C00000100000001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF1100012C00000100000001 /* InvoiceTracker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD1100032C00000100000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD1100022C00000100000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA1100012C00000100000001 /* InvoiceTrackerApp.swift in Sources */,
+				AA1100022C00000100000001 /* Invoice.swift in Sources */,
+				AA1100032C00000100000001 /* User.swift in Sources */,
+				AA1100042C00000100000001 /* BackendService.swift in Sources */,
+				AA1100052C00000100000001 /* SpeechRecognizer.swift in Sources */,
+				AA1100062C00000100000001 /* PDFManager.swift in Sources */,
+				AA1100072C00000100000001 /* ContentView.swift in Sources */,
+				AA1100082C00000100000001 /* DashboardView.swift in Sources */,
+				AA1100092C00000100000001 /* NewBillView.swift in Sources */,
+				AA11000A2C00000100000001 /* DraftPreviewEditView.swift in Sources */,
+				AA11000B2C00000100000001 /* PDFViewerView.swift in Sources */,
+				AA11000C2C00000100000001 /* BackendConfigView.swift in Sources */,
+				AA11000D2C00000100000001 /* ManageUsersView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		HH1100012C00000100000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				ENABLE_BITCODE = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		HH1100022C00000100000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				ENABLE_BITCODE = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		HH1100032C00000100000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = InvoiceTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aistudio.invoicetracker.qvzp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		HH1100042C00000100000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = InvoiceTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aistudio.invoicetracker.qvzp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		GG1100022C00000100000001 /* Build configuration list for PBXProject "InvoiceTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				HH1100012C00000100000001 /* Debug */,
+				HH1100022C00000100000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		GG1100012C00000100000001 /* Build configuration list for PBXNativeTarget "InvoiceTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				HH1100032C00000100000001 /* Debug */,
+				HH1100042C00000100000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 001100012C00000100000001 /* Project object */;
+}
+

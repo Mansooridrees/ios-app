@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Invoice Tracker</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Invoicely">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+</head>
+<body class="light-mode">
+  <div id="app">
+    <!-- Top Header -->
+    <header class="app-header">
+      <div class="header-brand">
+        <div class="brand-badge">MT</div>
+        <div>
+          <h1>Invoice Tracker</h1>
+          <span class="brand-subtitle">Sales & Invoicing</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="themeToggleBtn" class="icon-btn" title="Toggle Theme">🌓</button>
+        <button id="userBtn" class="icon-btn" title="User">👤</button>
+      </div>
+    </header>
+
+    <!-- Main Viewports -->
+    <main class="main-content">
+      <!-- 1. DASHBOARD TAB -->
+      <section id="tab-dashboard" class="tab-pane active">
+        <!-- Summary Cards -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-title">TOTAL BILLED</span>
+            <span class="metric-value" id="metricTotalBilled">Rs. 0.00</span>
+          </div>
+          <div class="metric-card highlight">
+            <span class="metric-title">COLLECTED</span>
+            <span class="metric-value" id="metricTotalPaid">Rs. 0.00</span>
+          </div>
+          <div class="metric-card warning">
+            <span class="metric-title">OUTSTANDING</span>
+            <span class="metric-value" id="metricTotalBalance">Rs. 0.00</span>
+          </div>
+        </div>
+
+        <!-- Filter & Search Bar -->
+        <div class="search-filter-bar">
+          <input type="text" id="searchInput" placeholder="🔍 Search client or invoice #..." class="search-input">
+          <div class="filter-chips">
+            <button class="chip active" data-filter="ALL">All</button>
+            <button class="chip" data-filter="PENDING">Pending</button>
+            <button class="chip" data-filter="PAID">Paid</button>
+          </div>
+        </div>
+
+        <!-- Invoices List -->
+        <div id="invoicesList" class="invoice-list">
+          <div class="empty-state">Loading invoices...</div>
+        </div>
+      </section>
+
+      <!-- 2. NEW BILL TAB -->
+      <section id="tab-new-bill" class="tab-pane">
+        <div class="pane-header">
+          <h2>Create New Sales Receipt</h2>
+          <button id="voiceDictationBtn" class="btn-voice">🎙️ Voice Input</button>
+        </div>
+
+        <form id="newBillForm" class="form-card">
+          <div class="form-row">
+            <div class="form-group flex-1">
+              <label>Customer Name</label>
+              <input type="text" id="custName" placeholder="e.g. Master Tech / Cash" required>
+            </div>
+            <div class="form-group flex-1">
+              <label>Invoice Number</label>
+              <input type="text" id="invNumber" placeholder="INV-2026-001" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group flex-1">
+              <label>Template</label>
+              <select id="templateSelect">
+                <option value="LAYOUT_2">Master Tech (Rawalpindi)</option>
+                <option value="LAYOUT_1">XP Computers (Classic)</option>
+                <option value="MODERN">Master Tools (Modern)</option>
+              </select>
+            </div>
+            <div class="form-group flex-1">
+              <label>Date</label>
+              <input type="date" id="invDate">
+            </div>
+          </div>
+
+          <!-- Items list -->
+          <div class="items-section">
+            <div class="section-title-row">
+              <h3>Line Items</h3>
+              <button type="button" id="addItemBtn" class="btn-sm">+ Add Item</button>
+            </div>
+            <div id="itemsContainer" class="items-container">
+              <!-- Dynamically populated item rows -->
+            </div>
+          </div>
+
+          <!-- Calculations Summary -->
+          <div class="bill-summary-box">
+            <div class="summary-line">
+              <span>Subtotal:</span>
+              <span id="billSubtotal">Rs. 0.00</span>
+            </div>
+            <div class="summary-line">
+              <span>Tax (8.5%):</span>
+              <span id="billTax">Rs. 0.00</span>
+            </div>
+            <div class="summary-line total-line">
+              <span>Grand Total:</span>
+              <span id="billTotal">Rs. 0.00</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary w-100">Save & Preview Invoice</button>
+        </form>
+      </section>
+
+      <!-- 3. DRAFT PREVIEW TAB -->
+      <section id="tab-draft" class="tab-pane">
+        <div class="pane-header">
+          <h2>Active Draft</h2>
+          <div class="draft-actions">
+            <button id="printPdfBtn" class="btn-sm">🖨️ Print / Export PDF</button>
+          </div>
+        </div>
+        <div id="draftPreviewContainer" class="invoice-preview-card">
+          <div class="empty-state">No draft loaded. Create one in 'New Bill'.</div>
+        </div>
+      </section>
+
+      <!-- 4. PDF VIEWER TAB -->
+      <section id="tab-pdf" class="tab-pane">
+        <div class="pane-header">
+          <h2>PDF Document</h2>
+          <button id="downloadBackendPdfBtn" class="btn-primary">Download PDF</button>
+        </div>
+        <div class="pdf-viewer-frame" id="pdfFrame">
+          <div class="pdf-placeholder">Select an invoice from the Ledger to view its official PDF document.</div>
+        </div>
+      </section>
+
+      <!-- 5. BACKEND SYNC TAB -->
+      <section id="tab-backend" class="tab-pane">
+        <h2>Backend Status & Configuration</h2>
+        <div class="card">
+          <div class="status-row">
+            <span>Server Endpoint:</span>
+            <strong id="backendUrlDisplay">http://localhost:3000</strong>
+          </div>
+          <div class="status-row">
+            <span>Health Status:</span>
+            <span id="backendStatusBadge" class="badge badge-success">Checking...</span>
+          </div>
+          <button id="refreshBackendBtn" class="btn-outline w-100 mt-3">Test Connection</button>
+        </div>
+
+        <div class="card mt-3">
+          <h3>Upload Spreadsheet (Excel / CSV)</h3>
+          <input type="file" id="spreadsheetFile" accept=".xlsx,.xls,.csv" class="file-input mt-2">
+          <button id="uploadSpreadsheetBtn" class="btn-primary w-100 mt-2">Upload & Parse to Ledger</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom iOS Tab Navigation Bar -->
+    <nav class="tab-bar">
+      <button class="tab-btn active" data-tab="tab-dashboard">
+        <span class="tab-icon">📊</span>
+        <span class="tab-label">Ledger</span>
+      </button>
+      <button class="tab-btn" data-tab="tab-new-bill">
+        <span class="tab-icon">➕</span>
+        <span class="tab-label">New Bill</span>
+      </button>
+      <button class="tab-btn" data-tab="tab-draft">
+        <span class="tab-icon">📝</span>
+        <span class="tab-label">Draft</span>
+      </button>
+      <button class="tab-btn" data-tab="tab-pdf">
+        <span class="tab-icon">📄</span>
+        <span class="tab-label">PDF</span>
+      </button>
+      <button class="tab-btn" data-tab="tab-backend">
+        <span class="tab-icon">⚡</span>
+        <span class="tab-label">Backend</span>
+      </button>
+    </nav>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,101 @@
+name: Build iOS App (.IPA)
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+    inputs:
+      build_configuration:
+        description: 'Build Configuration (Release or Debug)'
+        required: true
+        default: 'Release'
+        type: choice
+        options:
+          - Release
+          - Debug
+
+jobs:
+  build-ios:
+    name: Build & Package iOS .IPA
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Show Xcode Version & Environment
+        run: |
+          echo "=== macOS Runner Info ==="
+          sw_vers
+          echo "=== Xcode Version ==="
+          xcodebuild -version
+          echo "=== Installed SDKs ==="
+          xcodebuild -showsdks
+
+      - name: Build iOS Application (Unsigned / Ad-Hoc)
+        run: |
+          CONFIG="${{ github.event.inputs.build_configuration || 'Release' }}"
+          echo "Building configuration: $CONFIG"
+
+          xcodebuild clean build \
+            -project iosApp/InvoiceTracker.xcodeproj \
+            -scheme InvoiceTracker \
+            -configuration "$CONFIG" \
+            -sdk iphoneos \
+            -destination "generic/platform=iOS" \
+            -derivedDataPath build/DerivedData \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            AD_HOC_CODE_SIGNING_ALLOWED=YES
+
+      - name: Package .APP into .IPA with Ad-Hoc Signature
+        run: |
+          CONFIG="${{ github.event.inputs.build_configuration || 'Release' }}"
+          APP_PATH="build/DerivedData/Build/Products/${CONFIG}-iphoneos/InvoiceTracker.app"
+
+          if [ ! -d "$APP_PATH" ]; then
+            echo "ERROR: $APP_PATH not found!"
+            ls -la build/DerivedData/Build/Products/
+            exit 1
+          fi
+
+          echo "Found app bundle at $APP_PATH"
+
+          # Create Payload directory structure for IPA
+          mkdir -p build/ipa/Payload
+          cp -R "$APP_PATH" build/ipa/Payload/
+
+          # Apply ad-hoc code signature using Apple codesign utility
+          echo "Applying ad-hoc code signature..."
+          codesign --force --deep --sign - build/ipa/Payload/InvoiceTracker.app
+
+          # Package into .ipa archive with POSIX paths
+          cd build/ipa
+          zip -r -y ../../InvoiceTracker.ipa Payload
+          cd ../..
+
+          echo "=== Generated IPA Details ==="
+          ls -lh InvoiceTracker.ipa
+          unzip -l InvoiceTracker.ipa | head -n 25
+
+      - name: Generate Build Summary
+        run: |
+          IPA_SIZE=$(ls -lh InvoiceTracker.ipa | awk '{print $5}')
+          echo "### 📱 iOS Build Completed Successfully!" >> $GITHUB_STEP_SUMMARY
+          echo "- **Package Name**: \`InvoiceTracker.ipa\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **File Size**: \`$IPA_SIZE\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **Target Architecture**: \`arm64\` (iOS 15.0+)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Signing**: Ad-Hoc / Sideloading-ready (AltStore, Sideloadly, TrollStore)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Artifact**: Available for download below." >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload .IPA Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: InvoiceTracker-iOS-IPA
+          path: InvoiceTracker.ipa
+          if-no-files-found: error
+          retention-days: 14
+

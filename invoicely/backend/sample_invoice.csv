@@ -1,0 +1,17 @@
+Invoice #,INV-2026-1042,,,,
+Date,2026-09-01,,,,
+Due Date,2026-09-20,,,,
+Client Name,Apex Global Logistics Inc.,,,,
+Client Email,accounts@apexlogistics.com,,,,
+Client Address,742 Evergreen Terrace, Springfield, OR 97477,,,,
+Tax Rate %,8.5,,,,
+Discount,50.00,,,,
+Paid Amount,0.00,,,,
+Payment Terms,Net 15 Days. Wire transfer or corporate card.,,,,
+,,,,,
+Item Name,Description,Quantity,Unit Price,Item Total
+Cloud Server Migration,Azure to AWS architecture modernization,40,120.00,4800.00
+DevOps Pipeline Setup,CI/CD workflow with automated security scans,1,1500.00,1500.00
+Database Optimization,PostgreSQL query indexing & connection pooling,15,95.00,1425.00
+Security Audit,Vulnerability penetration testing and remediation,1,2200.00,2200.00
+24/7 SLA Support Tier,Enterprise incident response retainer,1,850.00,850.00

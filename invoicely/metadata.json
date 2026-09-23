@@ -1,0 +1,6 @@
+{
+  "name": "Invoice Tracker",
+  "description": "Invoice & Sales Receipt generator with direct Customer & Item creation, automated financial calculations, and PDF export",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Subtle vignette background -->
+    <path
+        android:pathData="M0,0h200v200h-200z"
+        android:fillColor="#F8FAFC" />
+
+    <!-- Outer Left Vertical Pillar of Left M: Left navy face -->
+    <path
+        android:pathData="M38,50 L52,50 L52,142 L38,142 Z"
+        android:fillColor="#1E293B" />
+    <!-- Outer Left Vertical Pillar inner bevel / light accent -->
+    <path
+        android:pathData="M48,50 L52,50 L52,142 L48,142 Z"
+        android:fillColor="#94A3B8" />
+
+    <!-- Outer Right Vertical Pillar of Right M: Right navy face -->
+    <path
+        android:pathData="M148,50 L162,50 L162,142 L148,142 Z"
+        android:fillColor="#1E293B" />
+    <!-- Outer Right Vertical Pillar inner light accent -->
+    <path
+        android:pathData="M148,50 L152,50 L152,142 L148,142 Z"
+        android:fillColor="#94A3B8" />
+
+    <!-- Interlocking Silver M (Back Layer) -->
+    <!-- Silver M Left Diagonal -->
+    <path
+        android:pathData="M52,50 L70,50 L100,102 L86,108 Z"
+        android:fillColor="#CBD5E1" />
+    <path
+        android:pathData="M52,50 L58,50 L88,102 L86,108 Z"
+        android:fillColor="#E2E8F0" />
+
+    <!-- Silver M Right Diagonal -->
+    <path
+        android:pathData="M148,50 L130,50 L100,102 L114,108 Z"
+        android:fillColor="#94A3B8" />
+    <path
+        android:pathData="M142,50 L148,50 L114,108 L112,102 Z"
+        android:fillColor="#E2E8F0" />
+
+    <!-- Silver M Center Vertical Stems -->
+    <path
+        android:pathData="M68,50 L82,50 L82,125 L68,125 Z"
+        android:fillColor="#CBD5E1" />
+    <path
+        android:pathData="M118,50 L132,50 L132,125 L118,125 Z"
+        android:fillColor="#94A3B8" />
+
+    <!-- Interlocking Bold Navy M (Front 3D Layer with beveled edges) -->
+    <!-- Navy M Left Slanted Leg (From Top Left down to Center V) -->
+    <path
+        android:pathData="M38,50 L56,50 L100,126 L82,126 Z"
+        android:fillColor="#0F172A" />
+    <!-- Light Bevel edge on Left Diagonal -->
+    <path
+        android:pathData="M44,50 L56,50 L100,126 L94,126 Z"
+        android:fillColor="#475569" />
+
+    <!-- Navy M Right Slanted Leg (Rising up and overlapping) -->
+    <path
+        android:pathData="M100,126 L118,126 L162,50 L144,50 Z"
+        android:fillColor="#1E293B" />
+    <!-- Darker shadow side on Right Diagonal -->
+    <path
+        android:pathData="M100,126 L106,126 L150,50 L144,50 Z"
+        android:fillColor="#0F172A" />
+
+    <!-- Deep 3D interlock loop at bottom vertex -->
+    <path
+        android:pathData="M82,126 L118,126 L100,136 Z"
+        android:fillColor="#0284C7" />
+
+    <!-- Bottom baseline connection bar for stylized structural symmetry -->
+    <path
+        android:pathData="M38,136 L66,136 L66,142 L38,142 Z"
+        android:fillColor="#1E293B" />
+    <path
+        android:pathData="M134,136 L162,136 L162,142 L134,142 Z"
+        android:fillColor="#1E293B" />
+
+    <!-- Words 'MASTER TECH' styled clean branding at bottom -->
+    <!-- M -->
+    <path
+        android:pathData="M26,166 h3.5 l4,10 l4,-10 h3.5 v14 h-3 v-10 l-3.5,8.5 h-2 l-3.5,-8.5 v10 h-3 Z"
+        android:fillColor="#0F172A" />
+    <!-- A -->
+    <path
+        android:pathData="M48,166 h3.5 l5,14 h-3.5 l-1.2,-3.5 h-4.6 l-1.2,3.5 h-3 Z M49,173.5 h3 l-1.5,-4.5 Z"
+        android:fillColor="#0F172A" />
+    <!-- S -->
+    <path
+        android:pathData="M60,177.5 c0.5,1.5 2,2.5 4,2.5 c2,0 3.2,-1 3.2,-2.2 c0,-1.2 -0.8,-1.8 -2.8,-2.3 l-1.5,-0.4 c-3,-0.8 -4.5,-2 -4.5,-4.3 c0,-2.5 2,-4.3 5,-4.3 c3.2,0 5,1.8 5.4,3.8 h-3.2 c-0.3,-1 -1.2,-1.6 -2.2,-1.6 c-1.2,0 -2,0.8 -2,1.8 c0,1 0.8,1.5 2.5,2 l1.5,0.4 c3.2,0.8 4.8,2.2 4.8,4.5 c0,2.8 -2.2,4.5 -5.5,4.5 c-3.5,0 -5.5,-1.8 -6,-4.4 Z"
+        android:fillColor="#0F172A" />
+    <!-- T -->
+    <path
+        android:pathData="M73,169 h4.5 v11 h3 v-11 h4.5 v-3 h-12 Z"
+        android:fillColor="#0F172A" />
+    <!-- E -->
+    <path
+        android:pathData="M89,166 h10 v3 h-7 v2.5 h6 v3 h-6 v2.5 h7 v3 h-10 Z"
+        android:fillColor="#0F172A" />
+    <!-- R -->
+    <path
+        android:pathData="M103,166 h6 c3,0 4.8,1.5 4.8,4 c0,2 -1.2,3.2 -2.8,3.6 l3.2,6.4 h-3.5 l-2.8,-5.8 h-2 v5.8 h-3 Z M106,171.5 h2.8 c1.2,0 2,-0.6 2,-1.6 c0,-1 -0.8,-1.6 -2,-1.6 h-2.8 Z"
+        android:fillColor="#0F172A" />
+
+    <!-- T -->
+    <path
+        android:pathData="M125,169 h4.5 v11 h3 v-11 h4.5 v-3 h-12 Z"
+        android:fillColor="#0F172A" />
+    <!-- E -->
+    <path
+        android:pathData="M141,166 h10 v3 h-7 v2.5 h6 v3 h-6 v2.5 h7 v3 h-10 Z"
+        android:fillColor="#0F172A" />
+    <!-- C -->
+    <path
+        android:pathData="M165,169.5 h-3.2 c-0.6,-1.8 -2,-2.8 -4,-2.8 c-3,0 -5,2.2 -5,5.3 c0,3.2 2,5.5 5,5.5 c2,0 3.4,-1 4,-2.8 h3.2 c-0.8,3.2 -3.5,5.3 -7.2,5.3 c-5,0 -8.2,-3.5 -8.2,-8 c0,-4.5 3.2,-8 8.2,-8 c3.8,0 6.4,2.2 7.2,5.5 Z"
+        android:fillColor="#0F172A" />
+    <!-- H -->
+    <path
+        android:pathData="M169,166 h3 v5 h6 v-5 h3 v14 h-3 v-6 h-6 v6 h-3 Z"
+        android:fillColor="#0F172A" />
+</vector>
